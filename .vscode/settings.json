@@ -1,0 +1,73 @@
+{
+    "files.exclude": {
+        // "docs/**": true,
+        "old/**": true,
+        "src/current/usr/newlib": true,
+        "src/experimental/**": true,
+        "src/current/addon/usb/**": true,  // usb 
+    }, 
+    "search.exclude": {
+        // "docs/**": true,
+        "old/**": true,
+        "src/current/usr/newlib": true,
+        "src/current/addon/usb/**": true,  // usb 
+        "src/experimental/**": true,        
+        "*/*.asm": true,
+        "*.sym": true,
+        "*.dis": true,
+        "*.d": true, 
+    },
+    "C_Cpp.exclusionPolicy": "checkFilesAndFolders",
+    "editor.rulers": [
+          80,  // 2nd ruler with no color option        
+     ],     
+     // https://stackoverflow.com/questions/42307949/color-theme-for-vs-code-integrated-terminal
+     // (more colors)
+     "workbench.colorCustomizations" : {
+        "terminal.foreground" : "#dddad6",
+        "terminal.background" : "#000000"   // 383737
+        "titleBar.activeBackground": "#42f5e6" // ... to differentiate agasint hosts...
+    },
+    // more terminal appearance https://code.visualstudio.com/docs/terminal/appearance
+    "terminal.integrated.fontFamily" : "'Consolas', monospace",
+    "[ARM]": {
+      "editor.autoClosingBrackets": "never"
+    },
+    "[asm]": {
+      "editor.autoClosingBrackets": "never"
+    },    
+    "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80
+    },
+    "todo-tree.general.tags": [
+        "quest",
+        "!STUDENT_",
+        "TODO"
+        // "xzl"
+        ],
+    // https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
+    "todo-tree.highlights.customHighlight": {
+        "quest": {
+            "icon": "question",  // https://octicons.github.com/
+            "type": "line",     // highlights the entire line containing the tag
+            "foreground": "red",
+            "background": "yellow",
+            "iconColour": "blue"
+        },
+        "TODO": {
+            "icon": "checklist",
+            "type": "tag",     // highlights the entire line containing the tag
+            "foreground": "orange",
+            "background": "black",
+            "iconColour": "black"
+        },
+        "!STUDENT_": {
+            // "icon": "circle-slash",
+            "type": "text",
+            // "foreground": "red",
+            "background": "lightgray",
+            // "iconColour": "blue"
+        }
+    }
+}

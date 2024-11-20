@@ -1,0 +1,70 @@
+Nov 2024
+UPDATE: 
+
+# make sure on the main branch, make sure it's clean
+
+
+do all these on the main branch. (JUST DON'T COMMIT)
+
+# clean code, first dry run, sanity check 
+ ./scripts/remove-source-lines.py --mode=dry-run -d .
+ 
+# update: do this on main br for testing...
+# then 
+# ./scripts/remove-source-lines.py --mode=comment
+(try to replay the quests, walkthrough the quest dsecription...)
+
+# finally 
+./scripts/remove-source-lines.py --mode=remove -d .
+
+
+# will push to the remote github br, delete any history 
+# default: relsae the code 
+./scripts/prep-push.sh 
+# or, only release doc, webpage, excluding the code (for pre release)
+./scripts/prep-push.sh --no-code
+
+# reset local main br
+git reset --hard
+
+############### end ############################
+
+
+# switch to student branch
+git co student
+
+# Fetch the latest changes from main
+# Reset your current branch (student) to match main:
+git fetch origin main
+git reset --hard origin/main
+
+
+# remove all uneeded stuffs from the branch...
+git rm  -r staged/
+git rm -r  archived/
+git rm -r exp?
+git rm -r exp??
+
+# clean code, first dry run, sanity check 
+ ./scripts/remove-source-lines.py --mode=dry-run -d .
+ 
+# update: do this on main br for testing...
+# then 
+# ./scripts/remove-source-lines.py --mode=comment
+(try to replay the quests, walkthrough the quest dsecription...)
+
+# finally 
+./scripts/remove-source-lines.py --mode=remove -d .
+
+# check, shoudl be zero 
+grep STUDENT -r *
+
+
+
+############### push to remote ###################
+
+git checkout --orphan student
+git add . 
+git commit -m "init"
+git remote add uva-os git@github.com:fxlin/uva-os-world1.git
+git push -u uva-os student --force
