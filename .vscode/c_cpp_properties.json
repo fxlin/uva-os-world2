@@ -1,0 +1,23 @@
+// xzl: cf: https://code.visualstudio.com/docs/cpp/c-cpp-properties-schema-reference
+
+{
+    "configurations": [
+        {
+            "name": "cs4414",
+            "includePath": [
+                "${workspaceFolder}/kernel",
+                "${workspaceFolder}/usr",
+                "${workspaceFolder}/kernel/addon/usb/include"
+                // "${workspaceFolder}/src/exp9/addon/sound/ampi",
+                // "${workspaceFolder}/src/exp9/addon/circle/include/"
+            ],
+            "defines": ["PLAT_RPI3", "AARCH64", "RASPPI=3", "CONFIG_FAT=1"],
+            "compilerPath": "/usr/bin/aarch64-linux-gnu-gcc-9",
+            "cStandard": "c11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-arm64",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}

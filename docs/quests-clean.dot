@@ -1,0 +1,58 @@
+// dot -Tpng quests.dot -o quests.png
+
+// dot -Tpdf quests-clean.dot -o quests-lab2-clean.pdf
+// a cleaner version, for paper inclusion
+
+// | Quest Name | Description | Credits |
+// |------------|-------------|---------|
+// | Quest01: boot | Set up kernel stack to reach `kernel_main()`. | 0 |
+// | Quest02: two cooperative printers | Enable cooperative multitasking. | 15 |
+// | Quest03: two preemptive printers | Enable preemptive multitasking. | 15 |
+// | Quest04: two donuts | Render two rotating donuts. | 20 |
+// | Quest05 (side): N donuts | Render multiple donuts concurrently. | 10 |
+// | Quest06: fast/slow donuts | Implement different donut priorities. | 10 |
+// | Quest07 (side): donuts in sync | Synchronize donut rendering. | 10 |
+// | Quest08 (side): kill a donut | Implement donut task exit. | 10 |
+// | Quest09 (side): donuts on Rpi3 | Reproduce donuts on Rpi3. | 20 |
+// | Quest10: wordsmith | Synchronize reader and writer tasks. | 20 |
+
+
+digraph QuestDependencies {
+    // Define node styles
+    node [shape=box, style=filled, color=lightblue];
+
+    // Define the edges based on the relations
+    quest01 -> quest02;
+    quest02 -> quest03;
+    quest03 -> quest04;
+    quest04 -> quest05;
+    quest04 -> quest06;
+    quest06 -> quest07;
+    quest06 -> quest08;
+    quest06 -> quest09;
+    quest06 -> quest10;
+    
+    // Special style for box w/ solid border
+    // these are key quests that require deliverables
+    quest02 [penwidth=2, color=black, style="filled,solid", fillcolor=lightblue];
+    quest03 [penwidth=2, color=black, style="filled,solid", fillcolor=lightblue];
+    quest04 [penwidth=2, color=black, style="filled,solid", fillcolor=lightblue];
+    quest05 [penwidth=2, color=black, style="filled,solid", fillcolor=lightblue];
+    quest06 [penwidth=2, color=black, style="filled,solid", fillcolor=lightblue];
+    quest07 [penwidth=2, color=black, style="filled,solid", fillcolor=lightblue];
+    quest08 [penwidth=2, color=black, style="filled,solid", fillcolor=lightblue];
+    quest09 [penwidth=2, color=black, style="filled,solid", fillcolor=lightblue];
+    quest10 [penwidth=2, color=black, style="filled,solid", fillcolor=lightblue];
+
+    // Define nodes with updated labels
+    quest01 [label="#1: boot\nSet up kernel stack\n (Stack)", fontsize=11];
+    quest02 [label="#2: two cooperative printers\nEnable cooperative multitasking\n (Scheduling)", fontsize=11];
+    quest03 [label="#3: two preemptive printers\nEnable preemptive multitasking\n (Scheduling)", fontsize=11];
+    quest04 [label="#4: two donuts\nRender two rotating donuts\n (Scheduling; IO)", fontsize=11];
+    quest05 [label="#5: N donuts\nRender donuts concurrently\n (Scheduling; IO)", fontsize=11];
+    quest06 [label="#6: fast/slow donuts\nImplement donut priorities\n (Scheduling)", fontsize=11];
+    quest07 [label="#7: donuts in sync\nSynchronized donut rotation\n (Scheduling)", fontsize=11];
+    quest08 [label="#8: kill a donut\nImplement task exit\n (Scheduling)", fontsize=11];
+    quest09 [label="#9: donuts on Rpi3\nReproduce donuts on Rpi3\n (HW/SW interactions)", fontsize=11];
+    quest10 [label="#10: wordsmith\nSynchronize reader/writer\n (Synchronization)", fontsize=11];
+}

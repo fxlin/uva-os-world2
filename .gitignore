@@ -1,0 +1,48 @@
+# temporary ... 
+# docs/* 
+
+qemu.log
+*.asm
+*.sym
+*.old
+*.bin
+
+# **/*.BMP
+# **/*.bmp
+
+site/*
+todel/*
+
+old/
+
+backup/*
+src/*/build
+src/*/build-qemu
+src/*/build-rpi
+**/*.a
+**/*.o
+**/*.d
+**/*.swp
+**/*.img
+**/*.elf
+**/*.list
+**/*.cmd
+
+*.pdf
+
+.project
+.cproject
+.orig
+
+# gnu global files
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+
+.gdb_history
+
+
+usr/sysmon/sysmon
+usr/blockchain/blockchain
+usr/LiteNES/nes1

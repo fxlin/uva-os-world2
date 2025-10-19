@@ -1,0 +1,43 @@
+// dot -Tpng quests.dot -o quests.png
+
+// | Quest Name | Description | Credits |
+// |------------|-------------|---------|
+// | Quest01: boot | Set up kernel stack to reach `kernel_main()`. | 0 |
+// | Quest02: two cooperative printers | Enable cooperative multitasking. | 15 |
+// | Quest03: two preemptive printers | Enable preemptive multitasking. | 15 |
+// | Quest04: two donuts | Render two rotating donuts. | 20 |
+// | Quest05 (side): N donuts | Render multiple donuts concurrently. | 10 |
+// | Quest06: fast/slow donuts | Implement different donut priorities. | 10 |
+// | Quest07 (side): donuts in sync | Synchronize donut rendering. | 10 |
+// | Quest08 (side): kill a donut | Implement donut task exit. | 10 |
+// | Quest09 (side): donuts on Rpi3 | Reproduce donuts on Rpi3. | 20 |
+// | Quest10: wordsmith | Synchronize reader and writer tasks. | 20 |
+
+
+digraph QuestDependencies {
+    // Define node styles
+    node [shape=box, style=filled, color=lightblue];
+
+    // Define the edges based on the relations
+    quest01 -> quest02;
+    quest02 -> quest03;
+    quest03 -> quest04;
+    quest04 -> quest05;
+    quest04 -> quest06;
+    quest06 -> quest07;
+    quest06 -> quest08;
+    quest06 -> quest09;
+    quest06 -> quest10;
+    
+    // Define nodes with updated labels based on comments
+    quest01 [label="Quest01: boot\nSet up kernel stack to reach `kernel_main()`\nCredits: 0", fontsize=10];
+    quest02 [label="Quest02: two cooperative printers\nEnable cooperative multitasking\nCredits: 15", fontsize=10];
+    quest03 [label="Quest03: two preemptive printers\nEnable preemptive multitasking\nCredits: 15", fontsize=10];
+    quest04 [label="Quest04: two donuts\nRender two rotating donuts\nCredits: 20", fontsize=10];
+    quest05 [label="Quest05 (side): N donuts\nRender multiple donuts concurrently\nCredits: 10", fontsize=10];
+    quest06 [label="Quest06: fast/slow donuts\nImplement different donut priorities\nCredits: 10", fontsize=10];
+    quest07 [label="Quest07 (side): donuts in sync\nSynchronize donut rendering\nCredits: 10", fontsize=10];
+    quest08 [label="Quest08 (side): kill a donut\nImplement donut task exit\nCredits: 10", fontsize=10];
+    quest09 [label="Quest09 (side): donuts on Rpi3\nReproduce donuts on Rpi3\nCredits: 20", fontsize=10];
+    quest10 [label="Quest10: wordsmith\nSynchronize reader and writer tasks\nCredits: 20", fontsize=10];
+}
